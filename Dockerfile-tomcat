@@ -1,0 +1,16 @@
+FROM amazoncorretto:11
+RUN yum install -y wget && \
+    yum install -y tar && \
+    yum install -y gzip
+#WORKDIR /app
+
+RUN mkdir /opt/tomcat
+RUN wget -O /opt/tomcat/apache-tomcat-9.0.73.tar.gz https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.tar.gz
+RUN cd /opt/tomcat && tar -xvzf apache-tomcat-9.0.73.tar.gz
+RUN rm /opt/tomcat/apache-tomcat-9.0.73.tar.gz
+COPY conf/tomcat-users.xml /opt/tomcat/apache-tomcat-9.0.73/conf
+COPY conf/context.xml /opt/tomcat/apache-tomcat-9.0.73/webapps/manager/META-INF/
+COPY conf/context.xml /opt/tomcat/apache-tomcat-9.0.73/webapps/host-manager/META-INF/
+#CMD ["/opt/tomcat/apache-tomcat-9.0.73/bin/startup.sh", "run"]
+CMD /opt/tomcat/apache-tomcat-9.0.73/bin/catalina.sh run
+EXPOSE 8080
