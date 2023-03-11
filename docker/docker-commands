@@ -1,0 +1,105 @@
+Docker images
+        docker images (List all the Docker images present on the local system)
+        docker images -a (List all the Docker images present on the local system with additional information such as size, image ID, and creation date)
+        docker images <image-name/tag> (List all the Docker images present on the local system with a specific name or tag)
+        docker rmi <image-name> (Remove a Docker image from the local system)
+        docker image prune (Remove all the Docker images that are not in use by any container)
+        docker image prune -a (Remove all the Docker images that are not in use by any container, along with any dangling images)
+        docker image history <image-name> (Show the Docker image history)
+    
+Docker containers
+        docker run <image-name> (Run a Docker container)
+        docker run -it <image-name> (Run a Docker container in interactive mode and attach to its terminal)
+        docker run -d <image-name> (Run a Docker container in detached mode)
+        docker ps (List all the running Docker containers)
+        docker ps -a (List all the Docker containers, including the ones that are not running)
+        docker stop <container-id> (Stop a running Docker container)
+        docker start <container-id> (Start a stopped Docker container)
+        docker restart <container-id> (Restart a running Docker container)
+        docker rm <container-id> (Remove a Docker container)
+        docker logs <container-id> (Get logs from a Docker container)
+    
+    Copy files from/to a Docker container
+        docker cp <container-id>:/path/to/source /path/to/destination
+        docker cp /path/to/source <container-id>:/path/to/destination
+        
+        docker run --name <container-name> <image-name> (Run a Docker container with a specific name)
+        docker run -e <variable-name>=<variable-value> <image-name> (Run a Docker container with environment variables)
+        docker run -p <host-port>:<container-port> <image-name> (Run a Docker container with exposed ports)
+        docker run -v <host-path>:<container-path> <image-name> (Run a Docker container with a mounted volume)
+        docker run -u <user-name> <image-name> (Run a Docker container with a specific user)
+        docker inspect <container-id> (Inspect a Docker container to see its details)
+        docker exec <container-id> <command> (Execute a command inside a running Docker container)
+        docker attach <container-id> (Attach to a running Docker container's terminal)
+        docker pause <container-id> (Pause a running Docker container)
+        docker unpause <container-id> (Unpause a paused Docker container)
+        docker rename <old-container-name> <new-container-name> (Rename a Docker container)
+        docker stats <container-id> (Display live resource usage statistics for one or more running containers)
+        
+
+Docker Images
+docker images: List all Docker images on the system.
+docker build: Build a Docker image from a Dockerfile.
+docker pull: Pull a Docker image from a registry.
+docker push: Push a Docker image to a registry.
+docker tag: Tag a Docker image with a new name and/or tag.
+docker rmi: Remove a Docker image from the system.
+docker image prune: Remove all unused Docker images from the system.
+
+Docker Containers
+docker run: Run a Docker container.
+docker ps: List all running Docker containers.
+docker ps -a: List all Docker containers, including those that are not running.
+docker start: Start a stopped Docker container.
+docker stop: Stop a running Docker container.
+docker restart: Restart a running Docker container.
+docker kill: Forcefully stop a running Docker container.
+docker rm: Remove a Docker container from the system.
+docker container prune: Remove all stopped Docker containers from the system.
+docker logs: Display logs from a Docker container.
+docker exec: Execute a command inside a running Docker container.
+docker attach: Attach to a running Docker container's terminal.
+docker pause: Pause a running Docker container.
+docker unpause: Unpause a paused Docker container.
+docker rename: Rename a Docker container.
+docker cp: Copy files to/from a Docker container.
+docker port: List port mappings for a Docker container.
+
+Docker Network
+docker network ls: List all Docker networks.
+docker network create: Create a new Docker network.
+docker network rm: Remove a Docker network.
+docker network connect: Connect a Docker container to a network.
+docker network disconnect: Disconnect a Docker container from a network.
+
+Docker Volumes
+docker volume ls: List all Docker volumes.
+docker volume create: Create a new Docker volume.
+docker volume rm: Remove a Docker volume.
+docker volume inspect: Display detailed information about a Docker volume.
+docker volume prune: Remove all unused Docker volumes from the system.
+
+Docker Swarm
+docker swarm init: Initialize a new Docker swarm.
+docker swarm join: Join a Docker swarm as a worker or manager node.
+docker node ls: List all nodes in the Docker swarm.
+docker service create: Create a new Docker service in the swarm.
+docker service ls: List all services in the Docker swarm.
+docker service scale: Scale a Docker service up or down.
+docker service update: Update the configuration of a Docker service.
+docker stack deploy: Deploy a Docker stack to the swarm.
+docker stack ls: List all stacks in the swarm.
+
+Docker System
+docker system df: Display disk usage for Docker.
+docker system events: Display real-time events from the Docker server.
+docker system info: Display information about the Docker installation.
+docker system prune: Remove all unused resources from the Docker system.
+
+Docker Compose
+docker-compose up: Start all containers defined in a docker-compose.yml file.
+docker-compose down: Stop all containers defined in a docker-compose.yml file and remove them.
+docker-compose ps: List all running containers defined in a docker-compose.yml file.
+docker-compose logs: Display logs from all containers defined in a docker-compose.yml file.
+docker-compose exec: Execute a command inside a running container defined in a docker-compose.yml file.
+docker-compose build: Build Docker images defined in a docker-compose.yml file.
