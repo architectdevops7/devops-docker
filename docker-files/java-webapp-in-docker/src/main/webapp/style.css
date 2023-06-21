@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 200px;
+}
+
+button[type="button"] {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+#student-list {
+    margin-top: 10px;
+}
+
+.student {
+    margin-bottom: 20px;
+}
+
+.student h3 {
+    margin: 0;
+}
+
+.student ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.student li {
+    margin-bottom: 5px;
+}

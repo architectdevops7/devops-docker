@@ -1,0 +1,6 @@
+# Base image
+FROM jenkins/jenkins:latest
+
+# Expose the Jenkins web interface port
+EXPOSE 8080
+
