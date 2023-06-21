@@ -1,6 +1,6 @@
 # docker-repo
-**
-# Troubleshoot the application**
+
+# Troubleshoot the application
 1. To check the Maven build output and verify if the WAR file is generated:
 
 docker run --rm -v /path/to/your/project:/app -w /app maven:3.8.4-openjdk-11-slim mvn package -DskipTests
