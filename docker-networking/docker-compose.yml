@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    networks:
+      - my-network
+    deploy:
+      replicas: 3
+
+  application:
+    image: architectdevops7/javaapp:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - my-network
+    deploy:
+      replicas: 3
+
+  db:
+    image: mongo:latest
+    networks:
+      - my-network
+    deploy:
+      replicas: 3
+
+networks:
+  my-network:
+    driver: overlay
