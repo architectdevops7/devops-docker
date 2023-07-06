@@ -1,0 +1,2 @@
+# To deploy docker stack on multiple host
+docker stack deploy -c docker-compose.yml my-stack
