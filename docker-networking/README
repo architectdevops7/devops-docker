@@ -1,2 +1,8 @@
+# To create the network - overlay
+docker network create --driver overlay my-network
+
+# To initiate the docker swarm
+docker swarm init
+
 # To deploy docker stack on multiple host
 docker stack deploy -c docker-compose.yml my-stack
