@@ -1,41 +1,10 @@
 # Django with PostgreSQL
 
-One-minute deployment, simple web-application.
-
-*It is not recommended to deploy a core database as a container. This example shows how to handle the multi-container situation, when one container (Django) strongly depends on the other container (database).*
-
-
 ## Getting Started
-![Screen Shopt](images/main-screenshot.png?raw=true "Screen Shot")
+
 Two containers
   * web app(Django)
   * database(PostgreSQL)
-
-If a container (Django) should be launched after another container(postgres) we can define it in the `depends_on` field.
-
-```
-version: '3.3'
-
-services:
-  app:
-    build:
-      context: ./src
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-  db:
-    image: "postgres:13.5-alpine"
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-
-```
-
-
 
 
 ### Prerequisites
@@ -53,38 +22,48 @@ docker-compose version 1.21.1, build 5a3f1a3
 ### Installation
 
 ```
-git clone https://github.com/thejungwon/docker-webapp-django.git
-cd docker-webapp-django
-docker-compose up
+git clone git@github.com:architectdevops7/docker-repo.git
+cd docker-repo
+cd docker-django-webapp
+docker-compose up -d (to spin-up containers in one docker host)
+```
+### Containers in multiple host use the below method
+```
+git clone git@github.com:architectdevops7/docker-repo.git
+cd docker-repo
+cd docker-django-webapp
+cd docker-repo/docker-django-webapp/src
+docker build -t django-app . (Build the image)
 ```
 
-## Running the tests
+### Create the compose file to orchestrate the containers in multiple host (with resource constraints and replicas - create swarm nodes prior this deployment)
+```
+version: '3.8'
 
-TBD
+services:
+  app:
+    image: "docker-webapp-django-app"
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.2'
+          memory: 256M
 
-### Break down into end to end tests
-
-TBD
-
-### And coding style tests
-
-TBD
-
-
-
-## Built With
-
-* [Django](https://www.djangoproject.com/) - Web framework
-* [PostgreSQL](https://www.postgresql.org/) - Database
-* [Unsplash](https://source.unsplash.com/) - External API
-* [Bootstrap](https://getbootstrap.com/) - Front-end framework
+  db:
+    image: "postgres:13.5-alpine"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+```
 
 
-## Authors
-
-* **Jungwon Seo** - *Initial work* - [thejungwon](https://github.com/thejungwon)
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
