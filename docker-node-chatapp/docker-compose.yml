@@ -1,23 +1,27 @@
 version: "3"
 services:
-    app:
-        image: timschilson/schat
-        container_name: schat-app
-        restart: always
-        ports:
-            - "3000:3000"
-        links:
-            - mongo
-    mongo:
-        image: mongo
-        container_name: schat-mongo
-        restart: always
-        ports:
-            - "27017:27017"
-        volumes:
-            - mongodb:/data/db
-            - mongodb_config:/data/configdb
+  app:
+    image: timschilson/schat
+    container_name: schat-app
+    restart: always
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+
+  mongo:
+    image: mongo
+    container_name: schat-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
 
 volumes:
-    mongodb:
-    mongodb_config:
+  mongodb:
+  mongodb_config:
