@@ -86,6 +86,3 @@ In the following image you can see how the web application looks like:
 
 ---
 
-## License 🛂
-
-Distributed under the MIT License. See `LICENSE` for more information.
