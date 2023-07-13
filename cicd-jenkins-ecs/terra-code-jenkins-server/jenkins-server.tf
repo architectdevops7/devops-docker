@@ -14,10 +14,10 @@ data "aws_ami" "latest-amazon-linux-image" {
 resource "aws_instance" "myapp-server" {
   ami                         = data.aws_ami.latest-amazon-linux-image.id
   instance_type               = var.instance_type
-  key_name                    = "jenkins-server"
+  key_name                    = "nvirginia"
   subnet_id                   = aws_subnet.myapp-subnet[0].id
   vpc_security_group_ids      = [aws_default_security_group.default-sg.id]
-  availability_zone           = var.avail_zone
+  availability_zone           = var.avail_zone[0]
   associate_public_ip_address = true
   user_data                   = file("jenkins-server-script.sh")
   tags = {

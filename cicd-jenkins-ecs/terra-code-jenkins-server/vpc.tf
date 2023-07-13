@@ -6,10 +6,10 @@ resource "aws_vpc" "myapp-vpc" {
 }
 
 resource "aws_subnet" "myapp-subnet" {
-  count            = length(var.subnet_cidr_blocks)
+  count            = length(var.subnet_cidr_block)
   vpc_id           = aws_vpc.myapp-vpc.id
-  cidr_block       = var.subnet_cidr_blocks[count.index]
-  availability_zone = var.avail_zones[count.index]
+  cidr_block       = var.subnet_cidr_block[count.index]
+  availability_zone = var.avail_zone[count.index]
 
   tags = {
     Name = "myapp-subnet-${count.index + 1}"
