@@ -38,68 +38,68 @@ Docker containers
         
 
 Docker Images
-docker images: List all Docker images on the system.
-docker build: Build a Docker image from a Dockerfile.
-docker pull: Pull a Docker image from a registry.
-docker push: Push a Docker image to a registry.
-docker tag: Tag a Docker image with a new name and/or tag.
-docker rmi: Remove a Docker image from the system.
-docker image prune: Remove all unused Docker images from the system.
+        docker images: List all Docker images on the system.
+        docker build: Build a Docker image from a Dockerfile.
+        docker pull: Pull a Docker image from a registry.
+        docker push: Push a Docker image to a registry.
+        docker tag: Tag a Docker image with a new name and/or tag.
+        docker rmi: Remove a Docker image from the system.
+        docker image prune: Remove all unused Docker images from the system.
 
 Docker Containers
-docker run: Run a Docker container.
-docker ps: List all running Docker containers.
-docker ps -a: List all Docker containers, including those that are not running.
-docker start: Start a stopped Docker container.
-docker stop: Stop a running Docker container.
-docker restart: Restart a running Docker container.
-docker kill: Forcefully stop a running Docker container.
-docker rm: Remove a Docker container from the system.
-docker container prune: Remove all stopped Docker containers from the system.
-docker logs: Display logs from a Docker container.
-docker exec: Execute a command inside a running Docker container.
-docker attach: Attach to a running Docker container's terminal.
-docker pause: Pause a running Docker container.
-docker unpause: Unpause a paused Docker container.
-docker rename: Rename a Docker container.
-docker cp: Copy files to/from a Docker container.
-docker port: List port mappings for a Docker container.
+        docker run: Run a Docker container.
+        docker ps: List all running Docker containers.
+        docker ps -a: List all Docker containers, including those that are not running.
+        docker start: Start a stopped Docker container.
+        docker stop: Stop a running Docker container.
+        docker restart: Restart a running Docker container.
+        docker kill: Forcefully stop a running Docker container.
+        docker rm: Remove a Docker container from the system.
+        docker container prune: Remove all stopped Docker containers from the system.
+        docker logs: Display logs from a Docker container.
+        docker exec: Execute a command inside a running Docker container.
+        docker attach: Attach to a running Docker container's terminal.
+        docker pause: Pause a running Docker container.
+        docker unpause: Unpause a paused Docker container.
+        docker rename: Rename a Docker container.
+        docker cp: Copy files to/from a Docker container.
+        docker port: List port mappings for a Docker container.
 
 Docker Network
-docker network ls: List all Docker networks.
-docker network create: Create a new Docker network.
-docker network rm: Remove a Docker network.
-docker network connect: Connect a Docker container to a network.
-docker network disconnect: Disconnect a Docker container from a network.
+        docker network ls: List all Docker networks.
+        docker network create: Create a new Docker network.
+        docker network rm: Remove a Docker network.
+        docker network connect: Connect a Docker container to a network.
+        docker network disconnect: Disconnect a Docker container from a network.
 
 Docker Volumes
-docker volume ls: List all Docker volumes.
-docker volume create: Create a new Docker volume.
-docker volume rm: Remove a Docker volume.
-docker volume inspect: Display detailed information about a Docker volume.
-docker volume prune: Remove all unused Docker volumes from the system.
+        docker volume ls: List all Docker volumes.
+        docker volume create: Create a new Docker volume.
+        docker volume rm: Remove a Docker volume.
+        docker volume inspect: Display detailed information about a Docker volume.
+        docker volume prune: Remove all unused Docker volumes from the system.
 
 Docker Swarm
-docker swarm init: Initialize a new Docker swarm.
-docker swarm join: Join a Docker swarm as a worker or manager node.
-docker node ls: List all nodes in the Docker swarm.
-docker service create: Create a new Docker service in the swarm.
-docker service ls: List all services in the Docker swarm.
-docker service scale: Scale a Docker service up or down.
-docker service update: Update the configuration of a Docker service.
-docker stack deploy: Deploy a Docker stack to the swarm.
-docker stack ls: List all stacks in the swarm.
+        docker swarm init: Initialize a new Docker swarm.
+        docker swarm join: Join a Docker swarm as a worker or manager node.
+        docker node ls: List all nodes in the Docker swarm.
+        docker service create: Create a new Docker service in the swarm.
+        docker service ls: List all services in the Docker swarm.
+        docker service scale: Scale a Docker service up or down.
+        docker service update: Update the configuration of a Docker service.
+        docker stack deploy: Deploy a Docker stack to the swarm.
+        docker stack ls: List all stacks in the swarm.
 
 Docker System
-docker system df: Display disk usage for Docker.
-docker system events: Display real-time events from the Docker server.
-docker system info: Display information about the Docker installation.
-docker system prune: Remove all unused resources from the Docker system.
+        docker system df: Display disk usage for Docker.
+        docker system events: Display real-time events from the Docker server.
+        docker system info: Display information about the Docker installation.
+        docker system prune: Remove all unused resources from the Docker system.
 
 Docker Compose
-docker-compose up: Start all containers defined in a docker-compose.yml file.
-docker-compose down: Stop all containers defined in a docker-compose.yml file and remove them.
-docker-compose ps: List all running containers defined in a docker-compose.yml file.
-docker-compose logs: Display logs from all containers defined in a docker-compose.yml file.
-docker-compose exec: Execute a command inside a running container defined in a docker-compose.yml file.
-docker-compose build: Build Docker images defined in a docker-compose.yml file.
+        docker-compose up: Start all containers defined in a docker-compose.yml file.
+        docker-compose down: Stop all containers defined in a docker-compose.yml file and remove them.
+        docker-compose ps: List all running containers defined in a docker-compose.yml file.
+        docker-compose logs: Display logs from all containers defined in a docker-compose.yml file.
+        docker-compose exec: Execute a command inside a running container defined in a docker-compose.yml file.
+        docker-compose build: Build Docker images defined in a docker-compose.yml file.
