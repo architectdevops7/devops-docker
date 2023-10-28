@@ -15,6 +15,10 @@ docker run --rm -v /path/to/your/project:/app -w /app maven:3.8.4-openjdk-11-sli
 This command lists the files in the target directory inside the Docker container.
 Make sure to replace /path/to/your/project with the actual path to your project directory.
 
+3. Install docker & docker compose:  
+
+curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose  
+chmod +x /usr/local/bin/docker-compose  
 
 
  
