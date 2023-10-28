@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+    container_name: myapp
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./certs:/certs
+
+  mongo:
+    image: mongo
+    container_name: mymongo
+    restart: always
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodb:
+  mongodb_config:
